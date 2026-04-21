@@ -1,0 +1,24 @@
+<script>
+function submitForm(){
+
+let name=document.getElementById("name").value.trim();
+let branch=document.getElementById("branch").value.trim();
+
+if(name==="" || branch===""){
+alert("Please fill all fields");
+return;
+}
+
+fetch("YOUR_GOOGLE_SCRIPT_URL", {
+method:"POST",
+body:new URLSearchParams({
+name:name,
+branch:branch
+})
+})
+.then(res => {
+window.location.href="YOUR_IMAGE_LINK_HERE";
+});
+
+}
+</script>
