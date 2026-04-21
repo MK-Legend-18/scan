@@ -1,24 +1,74 @@
-<script>
-function submitForm(){
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Verification</title>
 
-let name=document.getElementById("name").value.trim();
-let branch=document.getElementById("branch").value.trim();
-
-if(name==="" || branch===""){
-alert("Please fill all fields");
-return;
+<style>
+body{
+margin:0;
+padding:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#000,#1a1a1a,#300);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
 }
 
-fetch("YOUR_GOOGLE_SCRIPT_URL", {
-method:"POST",
-body:new URLSearchParams({
-name:name,
-branch:branch
-})
-})
-.then(res => {
-window.location.href="YOUR_IMAGE_LINK_HERE";
-});
+.box{
+background:#111;
+padding:30px;
+border-radius:15px;
+width:320px;
+text-align:center;
+box-shadow:0 0 20px rgba(255,0,0,.4);
+}
 
+h1{
+color:red;
+margin-bottom:20px;
+}
+
+input{
+width:90%;
+padding:10px;
+margin:10px 0;
+border:none;
+border-radius:8px;
+}
+
+button{
+padding:12px 20px;
+width:95%;
+border:none;
+border-radius:8px;
+background:red;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h1>Student Verification</h1>
+
+<input type="text" placeholder="Enter Name"><br>
+<input type="text" placeholder="Enter Branch"><br>
+
+<button onclick="go()">Verify & Continue</button>
+</div>
+
+<script>
+function go(){
+window.location.href="https://google.com";
 }
 </script>
+
+</body>
+</html>
